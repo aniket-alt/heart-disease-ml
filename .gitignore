@@ -1,0 +1,23 @@
+# Ignore Google Drive sync paths
+/content/
+drive/
+*.ipynb_checkpoints/
+
+# Ignore raw data
+*.csv
+*.zip
+
+# Ignore large artifacts from each CRISP-DM phase
+heart_eda_artifacts/
+heart_phase3_artifacts/
+heart_phase4_artifacts/
+heart_phase5_evaluation/
+
+# Ignore staged model binaries
+serve/model/*.joblib
+serve/model/*.json
+serve/model/*.pkl
+
+# Python cache
+__pycache__/
+*.pyc
