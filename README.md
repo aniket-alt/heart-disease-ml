@@ -16,12 +16,9 @@ Includes: **data prep, exploratory analysis, feature selection, model training (
 - [Workflow](#-workflow)
 - [Training](#-training)
 - [Evaluation](#-evaluation)
-- [Explainability](#-explainability)
 - [Results & Insights](#-results--insights)
+- [Key Insights](#-key--insights)
 - [Deployment](#-deployment)
-- [Reproducibility](#-reproducibility)
-- [Contributing](#-contributing)
-- [License](#-license)
 - [Acknowledgments](#-acknowledgments)
 
 ---
@@ -88,6 +85,28 @@ Start API:
 ```bash
 uvicorn serve.app:app --reload --port 8091
 ```
+**Requirements**
+```
+# --- Core ML stack ---
+numpy
+pandas
+scipy
+scikit-learn
+joblib
+matplotlib
+
+# --- API (FastAPI service) ---
+fastapi
+uvicorn
+pydantic
+nest-asyncio>
+
+# --- Utilities / tests ---
+requests
+
+# --- Optional models (enable if you used them) ---
+# xgboost
+```
 
 ## 🛠️ Workflow
 
@@ -117,12 +136,6 @@ print("Test AUROC:", roc_auc_score(y_test, clf.predict_proba(X_test)[:,1]))
 * Test AUROC: ~0.88
 * PR AUC: ~0.86
 * Brier Score: ~0.16
-
-## 📊 Charts:
-* ROC Curve
-* PR Curve
-* Calibration Plot
-* Decision Curve
 
 ## 🏆 Results & Insights
 * Operating at Sensitivity ≥ 0.90:
