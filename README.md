@@ -4,7 +4,7 @@ A machine learning pipeline to predict the presence of **heart disease** using t
 Includes: **data prep, exploratory analysis, feature selection, model training (Logistic Regression, Random Forest, XGBoost), calibration, evaluation, fairness slices, and deployment with FastAPI**.
 
 📂 **Dataset:** [UCI Heart Disease Dataset (Kaggle link)](https://www.kaggle.com/datasets/redwankarimsony/heart-disease-data)  
-📰 **Medium Article:** 
+📰 **Medium Article:** https://medium.com/@aniketanil.naik/%EF%B8%8F-teaching-ai-to-predict-heart-disease-a4d412aaf4f1
 
 ---
 
