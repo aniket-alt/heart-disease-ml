@@ -82,7 +82,6 @@ Clone the repo:
 git clone https://github.com/aniket-alt/heart-disease-ml.git
 cd heart-disease-ml
 pip install -r requirements.txt
----
 ```
 Run notebook 'heart.ipynb'
 Start API:
@@ -92,15 +91,11 @@ uvicorn serve.app:app --reload --port 8091
 
 ## 🛠️ Workflow
 
-1. ** Data Understanding:** EDA, missing values, distributions
-
-2. ** Data Preparation: ** Cleaning, feature typing, binarization
-
-3. ** Modeling: ** Logistic Regression, RandomForest, XGBoost
-
-4. ** Evaluation: ** ROC/PR, calibration, fairness slices
-
-5. ** Deployment: ** FastAPI + Uvicorn
+1. **Data Understanding:** EDA, missing values, distributions
+2. **Data Preparation:** Cleaning, feature typing, binarization
+3. **Modeling:** Logistic Regression, RandomForest, XGBoost
+4. **Evaluation:** ROC/PR, calibration, fairness slices
+5. **Deployment:** FastAPI + Uvicorn
 
 ## 🐕 Training
 
@@ -146,6 +141,6 @@ Model achieves high recall (few false negatives), making it more suitable as a s
 * POST /predict_proba → probability + prediction
 
 ## 🙏 Acknowledgments
-*UCI Heart Disease Dataset
+* UCI Heart Disease Dataset
 * Scikit-learn, FastAPI, Matplotlib
 * Google Colab for experiments
