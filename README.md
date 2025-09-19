@@ -73,7 +73,7 @@ heart-disease-ml/
 ├── .gitignore
 └── README.md
 
-🛠️ Workflow
+## 🛠️ Workflow
 
 Data Understanding: EDA, missing values, distributions
 
@@ -85,7 +85,7 @@ Evaluation: ROC/PR, calibration, fairness slices
 
 Deployment: FastAPI + Uvicorn
 
-🐕 Training
+## 🐕 Training
 
 Minimal Logistic Regression example:
 from sklearn.linear_model import LogisticRegression
@@ -97,7 +97,7 @@ clf.fit(X_train, y_train)
 
 print("Test AUROC:", roc_auc_score(y_test, clf.predict_proba(X_test)[:,1]))
 
-📈 Evaluation
+## 📈 Evaluation
 
 Best model: RandomForest (full feature set)
 
@@ -107,7 +107,7 @@ PR AUC: ~0.86
 
 Brier Score: ~0.16
 
-📊 Charts:
+## 📊 Charts:
 
 ROC Curve
 
@@ -120,7 +120,7 @@ Calibration Plot
 
 Decision Curve
 
-🏆 Results & Insights
+## 🏆 Results & Insights
 
 Operating at Sensitivity ≥ 0.90:
 
@@ -132,9 +132,9 @@ PPV: 0.77
 
 NPV: 0.89
 
-💡 Key insight: Model achieves high recall (few false negatives), making it more suitable as a screening tool rather than final diagnosis.
+## 💡 Key insight: Model achieves high recall (few false negatives), making it more suitable as a screening tool rather than final diagnosis.
 
-🚀 Deployment
+## 🚀 Deployment
 
 FastAPI endpoints:
 
@@ -144,7 +144,7 @@ POST /predict → binary prediction (0/1)
 
 POST /predict_proba → probability + prediction
 
-🙏 Acknowledgments
+## 🙏 Acknowledgments
 
 UCI Heart Disease Dataset
 
