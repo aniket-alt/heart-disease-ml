@@ -1,10 +1,10 @@
-# 🫀 Heart Disease Prediction (CRISP-DM Pipeline)
+# :heart: Heart Disease Prediction (CRISP-DM Pipeline)
 
 A machine learning pipeline to predict the presence of **heart disease** using the **UCI Heart Disease dataset**.  
 Includes: **data prep, exploratory analysis, feature selection, model training (Logistic Regression, Random Forest, XGBoost), calibration, evaluation, fairness slices, and deployment with FastAPI**.
 
-📂 **Dataset:** [UCI Heart Disease Dataset (Kaggle link)](https://www.kaggle.com/datasets/ronitf/heart-disease-uci)  
-📰 **Medium Article:** (add link if you publish a blog)
+📂 **Dataset:** [UCI Heart Disease Dataset (Kaggle link)](https://www.kaggle.com/datasets/redwankarimsony/heart-disease-data)  
+📰 **Medium Article:** 
 
 ---
 
@@ -58,6 +58,8 @@ It demonstrates a complete **CRISP-DM pipeline**:
 ---
 
 ## 📂 Project Structure
+
+```
 heart-disease-ml/
 │
 ├── heart_phase2_EDA.ipynb # Phase 2: Exploratory Data Analysis
@@ -72,22 +74,38 @@ heart-disease-ml/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
+## ⚡ Quickstart
+
+Clone the repo:
+```bash
+git clone https://github.com/aniket-alt/heart-disease-ml.git
+cd heart-disease-ml
+pip install -r requirements.txt
+---
+```
+Run notebook 'heart.ipynb'
+Start API:
+```bash
+uvicorn serve.app:app --reload --port 8091
+```
 
 ## 🛠️ Workflow
 
-Data Understanding: EDA, missing values, distributions
+1. ** Data Understanding:** EDA, missing values, distributions
 
-Data Preparation: Cleaning, feature typing, binarization
+2. ** Data Preparation: ** Cleaning, feature typing, binarization
 
-Modeling: Logistic Regression, RandomForest, XGBoost
+3. ** Modeling: ** Logistic Regression, RandomForest, XGBoost
 
-Evaluation: ROC/PR, calibration, fairness slices
+4. ** Evaluation: ** ROC/PR, calibration, fairness slices
 
-Deployment: FastAPI + Uvicorn
+5. ** Deployment: ** FastAPI + Uvicorn
 
 ## 🐕 Training
 
 Minimal Logistic Regression example:
+```python
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 
@@ -96,58 +114,38 @@ clf = LogisticRegression(max_iter=500, class_weight="balanced")
 clf.fit(X_train, y_train)
 
 print("Test AUROC:", roc_auc_score(y_test, clf.predict_proba(X_test)[:,1]))
+```
 
 ## 📈 Evaluation
 
-Best model: RandomForest (full feature set)
-
-Test AUROC: ~0.88
-
-PR AUC: ~0.86
-
-Brier Score: ~0.16
+* Best model: RandomForest (full feature set)
+* Test AUROC: ~0.88
+* PR AUC: ~0.86
+* Brier Score: ~0.16
 
 ## 📊 Charts:
-
-ROC Curve
-
-
-PR Curve
-
-
-Calibration Plot
-
-
-Decision Curve
+* ROC Curve
+* PR Curve
+* Calibration Plot
+* Decision Curve
 
 ## 🏆 Results & Insights
+* Operating at Sensitivity ≥ 0.90:
+* Sensitivity: 0.91
+* Specificity: 0.72
+* PPV: 0.77
+* NPV: 0.89
 
-Operating at Sensitivity ≥ 0.90:
-
-Sensitivity: 0.91
-
-Specificity: 0.72
-
-PPV: 0.77
-
-NPV: 0.89
-
-## 💡 Key insight: Model achieves high recall (few false negatives), making it more suitable as a screening tool rather than final diagnosis.
+## 💡 Key insight:
+Model achieves high recall (few false negatives), making it more suitable as a screening tool rather than final diagnosis.
 
 ## 🚀 Deployment
-
-FastAPI endpoints:
-
-GET /health → returns model info
-
-POST /predict → binary prediction (0/1)
-
-POST /predict_proba → probability + prediction
+* FastAPI endpoints:
+* GET /health → returns model info
+* POST /predict → binary prediction (0/1)
+* POST /predict_proba → probability + prediction
 
 ## 🙏 Acknowledgments
-
-UCI Heart Disease Dataset
-
-Scikit-learn, FastAPI, Matplotlib
-
-Google Colab for experiments
+*UCI Heart Disease Dataset
+* Scikit-learn, FastAPI, Matplotlib
+* Google Colab for experiments
